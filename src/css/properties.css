@@ -1,0 +1,60 @@
+@property --accent-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #3B82F6;
+}
+
+@property --accent-selected-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #5593f7;
+}
+
+
+@property --accent-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #3f85f5;
+}
+
+@property --additional-text {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #8C8C8C;
+}
+
+@property --background-dark-main-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #111827;
+}
+
+@property --background-light-main-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #EFEFEF;
+}
+
+@property --background-dark-additional-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #1F2937;
+}
+
+@property --background-light-additional-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #FFFFFF;
+}
+
+@property --background-dark-text-main-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #F9F9F9;
+}
+
+@property --background-light-text-main-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #000000;
+}
