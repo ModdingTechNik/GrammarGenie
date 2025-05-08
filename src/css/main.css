@@ -99,6 +99,7 @@ h1 {
     padding: 0 8px;
     height: 48px;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    font: inherit;
 }
 
 /* Button */
@@ -111,6 +112,11 @@ button {
     height: 48px;
     text-align: center;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    font: inherit;
+}
+
+input {
+    font: inherit;
 }
 
 button:hover {

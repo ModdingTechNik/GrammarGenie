@@ -11,27 +11,22 @@
     <link rel="icon" type="image/png" href="../../assets/images/icons/512.png" sizes="512x512">
     <link rel="icon" type="image/png" href="../../assets/images/icons/256.png" sizes="256x256">
     <link rel="icon" type="image/png" href="../../assets/images/icons/128.png" sizes="128x128">
-    <title>GrammarGenie Login</title>
+    <title>GrammarGenie Register</title>
 </head>
 <body>
 <div class="background color-background-dark-main centered-content">
     <span class="frame color-background-dark-additional">
         <img src="../../assets/images/icons/128.png" alt="Logo">
-        <h1 class="color-dark-text">Вхід GrammarGenie</h1>
-        <input type="email" placeholder="Введіть пошту або логін" class="textbox color-background-dark-main color-dark-border color-dark-text w400" name="Login" id="form-email">
+        <h1 class="color-dark-text">Реєстрація GrammarGenie</h1>
+        <input type="email" placeholder="Введіть логін або пошту" class="textbox color-background-dark-main color-dark-border color-dark-text w400" name="email" id="form-email">
         <input type="password" placeholder="Введіть пароль" class="textbox color-background-dark-main color-dark-border color-dark-text w400" name="password" id="form-password">
-        <label class="flex-align-left checkbox-label">
-            <input type="checkbox" name="stay" id="form-stay-login" class="color-accent">
-            <span class="color-dark-text">Зберегти вхід</span>
-        </label>
-        <button type="submit" class="color-dark-text color-dark-border w400">Увійти</button>
-        <button class="color-dark-text color-dark-border w400" onclick="window.location.href = 'register.html'">Зареєструватися</button>
+        <button class="color-dark-text color-dark-border w400">Зареєструватися</button>
         <div class="or-divider w400">
             <div></div>
             <span>або</span>
             <div></div>
         </div>
-        <img class="wh64" src="../../assets/images/logos/google.svg" alt="google">
+        <button onclick="window.location.href = 'login.html'" type="submit" class="color-dark-text color-dark-border w400">Увійти</button>
     </span>
 </div>
 <script src="../js/ThemeChanger.js"></script>
