@@ -1,60 +1,28 @@
-@property --accent-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #3B82F6;
+body {
+    --accent-color: #3b82f6;
+    --accent-selected-color: #5593f7;
+    --accent-pressed-color: #2474f5;
+    --text-additional: #8c8c8c;
+    --shadow-color: rgb(0 0 0 / 0.2);
+
+    --padding-small: 8px;
+    --padding-normal: 16px;
+    --padding-large: 32px;
+
+    --border-radius: 30px;
+    --input-height: 42px;
+
+    --transition-duration: 0.2s
 }
 
-@property --accent-selected-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #5593f7;
+body[theme='dark'] {
+    --backgound-color: #111827;
+    --foreground-color: #1f2937;
+    --text-main-color: #ffffff
 }
 
-
-@property --accent-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #3f85f5;
-}
-
-@property --additional-text {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #8C8C8C;
-}
-
-@property --background-dark-main-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #111827;
-}
-
-@property --background-light-main-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #EFEFEF;
-}
-
-@property --background-dark-additional-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #1F2937;
-}
-
-@property --background-light-additional-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #FFFFFF;
-}
-
-@property --background-dark-text-main-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #F9F9F9;
-}
-
-@property --background-light-text-main-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #000000;
+body[theme='light'] {
+    --backgound-color: #efefef;
+    --foreground-color: #ffffff;
+    --text-main-color: #000000
 }
