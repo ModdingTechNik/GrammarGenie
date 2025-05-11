@@ -12,6 +12,8 @@ body {
     --border-radius: 30px;
     --input-height: 42px;
 
+    --side-navigation-size: 256px;
+
     --transition-duration: 0.2s
 }
 

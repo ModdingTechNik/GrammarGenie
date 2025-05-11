@@ -56,3 +56,7 @@ a, textarea, button, input {
 * {
     box-sizing: border-box;
 }
+
+a {
+    text-decoration: none;
+}
