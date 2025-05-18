@@ -78,6 +78,7 @@ input[type='password'], input[type='text'] {
     flex-flow: row nowrap;
     align-items: center;
     vertical-align: text-top;
+    grid-gap: 0.3em;
 }
 
 input[type="checkbox"] {
@@ -121,4 +122,20 @@ input[type="checkbox"]:checked::before {
 .or-divider>span {
     padding-inline: var(--padding-small);
     color: var(--text-additional);
+}
+
+a {
+    color: var(--accent-color);
+}
+
+a:visited {
+    color: var(--accent-pressed-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+svg {
+    fill: var(--text-main-color);
 }

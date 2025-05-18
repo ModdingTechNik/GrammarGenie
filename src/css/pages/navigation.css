@@ -6,39 +6,188 @@ body {
     grid-template-columns: var(--side-navigation-size) auto;
 }
 
+body > header {
+    display: none;
+    width: 100vw;
+    position: fixed;
+    height: var(--header-height);
+    grid-template-columns: 1fr min(var(--side-navigation-size)) 1fr;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--foreground-color);
+    z-index: 100;
+}
+
+body > header > svg {
+    border: 1px solid var(--text-main-color);
+    border-radius: 50%;
+    padding-top: var(--padding-small);
+}
+
+body > header > button {
+    padding: 0;
+    background-color: var(--foreground-color);
+    width: var(--icon-mobile-width);
+    height: var(--icon-mobile-width);
+    border: unset;
+    border-radius: unset;
+    box-shadow: unset;
+}
+
+body > header > button:hover {
+    background-color: var(--foreground-color);
+}
+
+body > header > button:active {
+    background-color: var(--foreground-color);
+}
+
+body > header > button > span {
+    --line-height-half: 4px;
+
+    display: inline-block;
+    width: var(--icon-mobile-width);
+    height: 1px;
+    border: var(--line-height-half) solid var(--text-main-color);
+    border-radius: var(--line-height-half);
+}
+
 aside {
     display: flex;
     flex-flow: column wrap;
+    background-color: var(--foreground-color);
     grid-gap: 0;
-    padding: 0;
+    position: fixed;
+    min-height: 100vh;
+    width: var(--side-navigation-size);
+
+    transition-property: transform;
+    transition-timing-function: ease;
+    transition-duration: var(--transition-duration);
 }
 
-aside>nav {
+aside > img {
+    width: calc(var(--side-navigation-size) - var(--padding-small) * 2);
+    align-self: center;
+}
+
+aside > nav {
     padding: var(--padding-normal);
     margin: 0;
 }
 
-aside>nav>ul {
+aside > nav > ul {
     display: flex;
     flex-flow: column wrap;
     grid-gap: var(--padding-normal);
 }
 
-aside>nav>ul>li {
+aside > nav > ul > li {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     grid-gap: var(--padding-small);
 }
 
-aside>nav>ul>li>a {
+aside > nav > ul > li > a {
     display: inline;
+    color: var(--text-main-color);
 }
 
-aside>footer {
+aside > nav > ul > li > a:visited {
+    color: var(--text-main-color);
+}
+
+aside > footer {
     flex-grow: 1;
     display: flex;
     flex-flow: column wrap;
     justify-content: end;
     padding: var(--padding-normal);
+    grid-gap: var(--padding-small);
+}
+
+main {
+    grid-column: 2;
+}
+
+#theme-switcher {
+    position: relative;
+    width: calc(2 * var(--input-height));
+    align-self: end;
+    background-color: var(--backgound-color);
+    border: none;
+    box-shadow: none;
+}
+
+#theme-switcher > svg {
+    width: calc(var(--input-height) / 1.5);
+    height: calc(var(--input-height) / 1.5);
+    position: absolute;
+}
+
+#theme-switcher > svg:first-child {
+    top: calc(var(--input-height) / 6);
+    left: var(--padding-small);
+}
+
+#theme-switcher > svg:last-child {
+    top: calc(var(--input-height) / 5);
+    right: var(--padding-small);
+}
+
+#theme-switcher:hover {
+    background-color: var(--backgound-color);
+}
+
+#theme-switcher:active {
+    background-color: var(--backgound-color);
+}
+
+#theme-switcher::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 50;
+
+    content: '';
+    display: inline-block;
+    width: var(--input-height);
+    height: var(--input-height);
+
+    background-color: var(--accent-color);
+    clip-path: circle(40%);
+    /*transform: translate(50%, -2%);*/
+
+    transition-property: transform;
+    transition-timing-function: ease;
+    transition-duration: var(--transition-duration);
+}
+
+#theme-switcher[theme="light"]::before {
+    transform: translateX(-100%);
+}
+
+@media (max-width: 720px) {
+    body {
+        grid-template-columns: unset;
+        grid-template-rows: var(--header-height) auto;
+    }
+
+    body > header {
+        display: grid;
+    }
+
+    aside {
+        transform: translateX(-100%);
+    }
+
+    aside.visible {
+        transform: translateX(0);
+    }
+
+    main {
+        grid-column: 1;
+        grid-row: 2;
+    }
 }

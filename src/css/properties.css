@@ -10,7 +10,11 @@ body {
     --padding-large: 32px;
 
     --border-radius: 30px;
+
     --input-height: 42px;
+    --header-height: 96px;
+
+    --icon-mobile-width: 48px;
 
     --side-navigation-size: 256px;
 
@@ -26,5 +30,5 @@ body[theme='dark'] {
 body[theme='light'] {
     --backgound-color: #efefef;
     --foreground-color: #ffffff;
-    --text-main-color: #000000
+    --text-main-color: #1b263e
 }
