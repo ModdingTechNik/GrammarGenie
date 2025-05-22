@@ -2,6 +2,10 @@ body {
     --accent-color: #3b82f6;
     --accent-selected-color: #5593f7;
     --accent-pressed-color: #2474f5;
+
+    --accent-sucsses-color: #10B981;
+    --accent-error-color: #EF4444;
+
     --text-additional: #8c8c8c;
     --shadow-color: rgb(0 0 0 / 0.2);
 
