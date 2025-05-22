@@ -19,17 +19,23 @@ const Theme = Object.freeze({
     }
 })
 
+const themeSwitcher = document.querySelector('#theme-switcher')
+
 window.addEventListener('load', function () {
     let theme = localStorage.getItem(Theme.ATTRIBUTE)
-    if (theme === undefined) {
+    if (theme !== Theme.DARK && theme !== Theme.LIGHT) {
         Theme.set(Theme.DARK)
     } else {
         Theme.set(theme)
-        document.querySelector('#theme-switcher').setAttribute(Theme.ATTRIBUTE, theme)
+        if (themeSwitcher != null)
+            themeSwitcher.setAttribute(Theme.ATTRIBUTE, theme);
     }
 })
 
-document.querySelector('#theme-switcher').addEventListener('click', function () {
-    Theme.switch()
-    this.setAttribute(Theme.ATTRIBUTE, Theme.get())
-})
+
+if (themeSwitcher != null) {
+    themeSwitcher.addEventListener('click', function () {
+        Theme.switch()
+        this.setAttribute(Theme.ATTRIBUTE, Theme.get())
+    })
+}
