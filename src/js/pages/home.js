@@ -1,0 +1,1 @@
+window.open('./src/pages/register.html', '_self')

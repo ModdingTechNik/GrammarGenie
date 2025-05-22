@@ -1,0 +1,39 @@
+main {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+form {
+    background-color: var(--foreground-color);
+
+    width: 400px;
+    display: inline-flex;
+    flex-flow: column wrap;
+    grid-gap: var(--padding-normal);
+    padding: var(--padding-large);
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 10px 5px var(--shadow-color);
+}
+
+form img {
+    align-self: center;
+}
+
+form h1 {
+    align-self: center;
+}
+
+@media (max-width: 400px) or (max-height: 610px) {
+    form {
+        background-color: var(--backgound-color);
+        box-shadow: 0 0 0 0;
+    }
+}
+
+@media (max-width: 400px) {
+    form {
+        width: 320px;
+    }
+}

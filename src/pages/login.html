@@ -8,33 +8,33 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/properties.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="icon" type="image/png" href="../../assets/images/icons/512.png" sizes="512x512">
-    <link rel="icon" type="image/png" href="../../assets/images/icons/256.png" sizes="256x256">
-    <link rel="icon" type="image/png" href="../../assets/images/icons/128.png" sizes="128x128">
-    <title>GrammarGenie Login</title>
+    <link rel="stylesheet" href="../css/pages/authorization.css">
+    <link rel="icon" type="image/svg" href="../../assets/images/logos/logo.svg">
+    <title>GrammarGenie Логін</title>
 </head>
-<body>
-<div class="background color-background-dark-main centered-content">
-    <span class="frame color-background-dark-additional">
-        <img src="../../assets/images/icons/128.png" alt="Logo">
-        <h1 class="color-dark-text">Вхід GrammarGenie</h1>
-        <input type="email" placeholder="Введіть пошту або логін" class="textbox color-background-dark-main color-dark-border color-dark-text w400" name="Login" id="form-email">
-        <input type="password" placeholder="Введіть пароль" class="textbox color-background-dark-main color-dark-border color-dark-text w400" name="password" id="form-password">
-        <label class="flex-align-left checkbox-label">
-            <input type="checkbox" name="stay" id="form-stay-login" class="color-accent">
-            <span class="color-dark-text">Зберегти вхід</span>
+<body theme="dark">
+<main>
+    <form action="" method="post">
+        <img src="../../assets/images/logos/logo.svg" alt="logo" width="96" height="96">
+        <h1>Вхід GrammarGenie</h1>
+        <label for="form-login" class="visually-hidden">Логін</label><input type="text" placeholder="Введіть пошту або логін" name="login" id="form-login">
+        <label for="form-password" class="visually-hidden">Пароль</label><input type="password" placeholder="Введіть пароль" name="password" id="form-password">
+        <label class="checkbox-label">
+            <input type="checkbox" name="stay-login" id="form-stay-login">
+            Зберегти вхід
         </label>
-        <button type="submit" class="color-dark-text color-dark-border w400">Увійти</button>
-        <button class="color-dark-text color-dark-border w400" onclick="window.location.href = 'register.html'">Зареєструватися</button>
-        <div class="or-divider w400">
+        <button type="submit">Увійти</button>
+        <button type="button" onclick="window.location.href = 'register.html'">Зареєструватися</button>
+        <div class="or-divider">
             <div></div>
             <span>або</span>
             <div></div>
         </div>
-        <img class="wh64" src="../../assets/images/logos/google.svg" alt="google">
-    </span>
-</div>
+        <img src="../../assets/images/logos/google.svg" alt="google" width="64" height="64">
+    </form>
+</main>
 <script src="../js/ThemeChanger.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/pages/register.js"></script>
 </body>
 </html>

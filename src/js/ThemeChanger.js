@@ -1,68 +1,35 @@
-class ThemeChanger {
-    constructor() {
-        const loadTheme = localStorage.getItem('theme');
-        this.theme = loadTheme === undefined ? 'dark' : loadTheme
+const Theme = Object.freeze({
+    DARK: 'dark',
+    LIGHT: 'light',
+    ATTRIBUTE: 'theme',
 
-        this.dark = new Map()
-        this.light = new Map()
+    get: function () {
+        return  document.body.getAttribute(this.ATTRIBUTE)
+    },
 
-        this.init()
+    set: function (theme) {
+        document.body.setAttribute(this.ATTRIBUTE, theme)
+        localStorage.setItem(this.ATTRIBUTE, theme);
+    },
+
+    switch: function () {
+        let theme = this.get()
+        theme = theme === this.LIGHT ? this.DARK : this.LIGHT;
+        this.set(theme)
     }
+})
 
-    isDark() {
-        return this.theme === 'dark'
+window.addEventListener('load', function () {
+    let theme = localStorage.getItem(Theme.ATTRIBUTE)
+    if (theme === undefined) {
+        Theme.set(Theme.DARK)
+    } else {
+        Theme.set(theme)
+        document.querySelector('#theme-switcher').setAttribute(Theme.ATTRIBUTE, theme)
     }
+})
 
-    isLight() {
-        return this.theme === 'light'
-    }
-
-    init() {
-        this.addPair('color-background-dark-main', 'color-background-light-main')
-        this.addPair('color-background-dark-additional', 'color-background-light-additional')
-        this.addPair('color-dark-border', 'color-light-border')
-        this.addPair('color-dark-text', 'color-light-text')
-    }
-
-    addPair(darkClass, lightClass) {
-        this.dark.set(darkClass, lightClass);
-        this.light.set(lightClass, darkClass);
-    }
-
-    switchTheme() {
-        if (this.isDark()) {
-            this.switchToLight()
-            this.theme = 'light'
-        } else {
-            this.switchToDark()
-            this.theme = 'dark'
-        }
-
-        localStorage.setItem('theme', this.theme)
-    }
-
-    switchToDark() {
-        for (const key of this.light.keys()) {
-            for (const element of document.querySelectorAll('.' + key).values()) {
-                element.classList.remove(key)
-                element.classList.add(this.light.get(key))
-            }
-        }
-    }
-
-    switchToLight() {
-        for (const key of this.dark.keys()) {
-            for (const element of document.querySelectorAll('.' + key).values()) {
-                element.classList.remove(key)
-                element.classList.add(this.dark.get(key))
-            }
-        }
-    }
-}
-
-const GlobalThemeChanger = new ThemeChanger();
-
-window.onload = function () {
-    if (GlobalThemeChanger.isLight())
-        GlobalThemeChanger.switchToLight()
-}
+document.querySelector('#theme-switcher').addEventListener('click', function () {
+    Theme.switch()
+    this.setAttribute(Theme.ATTRIBUTE, Theme.get())
+})

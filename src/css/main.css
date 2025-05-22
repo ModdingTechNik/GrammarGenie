@@ -1,122 +1,51 @@
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
 html {
     font-family: Arial, sans-serif;
     font-size: 16px;
 }
 
-.background {
-    width: 100vw;
-    height: 100vh;
-}
-
-/* Sizes */
-
-.wh64 {
-    width: 64px;
-    height: 64px;
-}
-
-.w400 {
-    width: 400px;
-}
-
-/* Colors */
-
-.color-background-dark-main {
-    background-color: var(--background-dark-main-color);
-}
-
-.color-background-light-main {
-    background-color: var(--background-light-main-color);
-}
-
-.color-background-dark-additional {
-    background-color: var(--background-dark-additional-color);
-}
-
-.color-background-light-additional {
-    background-color: var(--background-light-additional-color);
-}
-
-.color-dark-border {
-    border-color: var(--background-dark-text-main-color);
-}
-
-.color-light-border {
-    border-color: var(--background-light-text-main-color);
-}
-
-.color-dark-text {
-    color: var(--background-dark-text-main-color);
-}
-
-.color-light-text {
-    color: var(--background-light-text-main-color);
-}
-
-/* Align */
-
-.centered-content {
-    display: grid;
-    align-items: center;
-    place-content: center;
-    justify-content: center;
-}
-
-.flex-align-left {
-    align-self: flex-start;
-}
-
-/* Components */
-
-/* Fixes */
-
-input::placeholder {
-    color: var(--additional-text);
+body {
+    background-color: var(--backgound-color);
+    color: var(--text-main-color);
 }
 
 h1 {
     font-size: 1.5rem;
 }
 
-/* Frame */
-
-.frame {
-    display: inline-flex;
-    flex-flow: column wrap;
-    align-items: center;
-    grid-gap: 16px;
-    border-radius: 60px;
-    padding: 32px;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
-}
-
-/* Textbox */
-
-.textbox {
-    border-style: solid;
-    border-radius: 30px;
-    border-width: 1px;
-    padding: 0 8px;
-    height: 48px;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
-    font: inherit;
-}
+/* Components */
 
 /* Button */
-
 button {
+    height: var(--input-height);
     background-color: var(--accent-color);
-    border-style: solid;
-    border-radius: 30px;
-    border-width: 1px;
-    height: 48px;
-    text-align: center;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
-    font: inherit;
-}
 
-input {
+    text-align: center;
+
+    border-radius: var(--border-radius);
+    border: 1px solid var(--text-main-color);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+
+    transition-property: background-color;
+    transition-timing-function: ease;
+    transition-duration: var(--transition-duration);
+
     font: inherit;
+    color: inherit;
+
+    cursor: pointer;
 }
 
 button:hover {
@@ -124,24 +53,40 @@ button:hover {
 }
 
 button:active {
-    transform: translateY(4px);
+    background-color: var(--accent-pressed-color);
 }
 
+input::placeholder {
+    color: var(--text-additional);
+}
+
+/* Textbox */
+
+input[type='password'], input[type='text'] {
+    height: var(--input-height);
+    background-color: var(--backgound-color);
+
+    padding-inline: var(--padding-normal);
+
+    border-radius: var(--border-radius);
+    border: 1px solid var(--text-main-color);
+    box-shadow: 5px 5px 10px 5px var(--shadow-color);
+}
 
 .checkbox-label {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 0.5em;
-    place-content: center;
+    display: flex;
+    flex-flow: row nowrap;
     align-items: center;
+    vertical-align: text-top;
+    grid-gap: 0.3em;
 }
 
 input[type="checkbox"] {
     appearance: none;
     display: inline;
-    width: 2em;
-    height: 2em;
-    box-shadow: inset -5px 5px 10px 2px rgba(0, 0, 0, 0.25);
+    width: var(--input-height);
+    height: var(--input-height);;
+    box-shadow: inset -5px 5px 10px 5px var(--shadow-color);
     clip-path: circle(40%);
 }
 
@@ -152,8 +97,8 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]:checked::before {
     content: '';
     display: inline-block;
-    width: 2em;
-    height: 2em;
+    width: var(--input-height);
+    height: var(--input-height);
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     background-color: var(--accent-color);
     transform: scale(0.5) translate(-5%, 5%);
@@ -171,10 +116,26 @@ input[type="checkbox"]:checked::before {
     display: inline-block;
     width: auto;
     height: 1px;
-    border-top: 1px solid var(--additional-text);
+    border-top: 1px solid var(--text-additional);
 }
 
 .or-divider>span {
-    padding: 0 8px;
-    color: var(--additional-text);
+    padding-inline: var(--padding-small);
+    color: var(--text-additional);
+}
+
+a {
+    color: var(--accent-color);
+}
+
+a:visited {
+    color: var(--accent-pressed-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+svg {
+    fill: var(--text-main-color);
 }
