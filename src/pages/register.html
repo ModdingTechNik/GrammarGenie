@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="uk-UA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/properties.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/authorization.css">
+    <link rel="icon" type="image/svg" href="../../assets/images/logos/logo.svg">
+    <title>GrammarGenie Реєстрація</title>
+</head>
+<body>
+<main>
+    <form action="" method="post">
+        <img src="../../assets/images/logos/logo.svg" alt="logo" width="96" height="96">
+        <h1>Реєстрація GrammarGenie</h1>
+        <label for="form-login" class="visually-hidden">Логін</label><input type="text" placeholder="Введіть пошту або логін" name="login" id="form-login">
+        <label for="form-password" class="visually-hidden">Пароль</label><input type="password" placeholder="Введіть пароль" name="password" id="form-password">
+        <label class="checkbox-label">
+            <input type="checkbox" name="policy-approve" id="form-policy-approve">
+            Згоден з
+            <a href="./privacy.html" target="_blank"> Політикою Безпеки</a>
+        </label>
+        <button type="submit">Зареєструватися</button>
+        <div class="or-divider">
+            <div></div>
+            <span>або</span>
+            <div></div>
+        </div>
+        <button type="button" onclick="window.location.href = 'login.html'">Увійти</button>
+    </form>
+</main>
+<script src="../js/ThemeChanger.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/pages/auth.js"></script>
+</body>
+</html>

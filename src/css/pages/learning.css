@@ -1,0 +1,59 @@
+main {
+    padding: var(--padding-large);
+    grid-gap: var(--padding-normal);
+    overflow-x: hidden;
+}
+
+main ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    grid-gap: var(--padding-normal);
+}
+
+ul > li > button {
+    background-color: var(--foreground-color);
+    padding-inline: var(--padding-large);
+    border: unset;
+    box-shadow: unset;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: var(--padding-large);
+}
+
+h3 {
+    font-size: 1.25em;
+    margin-block: var(--padding-normal);
+}
+
+section {
+    margin-bottom: var(--padding-large);
+    display: none;
+}
+
+section.visible {
+    display: block;
+}
+
+
+section > div {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+section > div > ul {
+    flex-flow: column nowrap;
+    justify-content: unset;
+    align-items: center;
+}
+
+s ul {
+    display: block;
+
+    flex-flow: unset unset;
+    justify-content: unset;
+    grid-gap: unset;
+}
